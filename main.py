@@ -97,7 +97,7 @@ hoop_coordinates = [
     [13,20,38]   , [13,21,32.2] ,  #0
     [7, 20, 38]  , [7, 21.5, 32.6],
     [-6, 20, 38] , [-6, 21.5, 32.6],
-    [-12,20,40] , [-12,21.5,32.6],
+    [-12,20,40] , [-12,21.5,32.2],
     # Second row
     [-13,14.5,38.5]    ,  [-13,14.5,33],
     [-5.5,14.5,38.5]  ,  [-5.5,14.5,33],
@@ -439,13 +439,13 @@ def stepped_platfrom():
                 RFID_Buff_index += 1
             platfrom_step = 18
     elif platfrom_step == 3: # 到达抓点
-        if stepped_flag == 1:   step_action(1, 39 - L3 * math.cos(math.asin(5.5 / 11.2)), 45,   -math.asin(5.5 / 11.2), ACT_OPEN, 28, 50, 0, 600, 100)   # 中
-        elif stepped_flag == 2: step_action(1, 39 - L3 * math.cos(math.asin(7 / 11.2)),   42, -math.asin(7 / 11.2),   ACT_OPEN, 28, 50, 0, 600, 101) # 低
-        elif stepped_flag == 3: step_action(1, 39 - L3 * math.cos(math.asin(5 / 11.2)),   50, -math.asin(5 / 11.2),   ACT_OPEN, 28, 50, 0, 600, 102) # 高
+        if stepped_flag == 1:   step_action(1, 39 - L3 * math.cos(math.asin(5.5 / 11.2)), 46.2,   -math.asin(5.5 / 11.2), ACT_OPEN, 28, 50, 0, 600, 100)   # 中
+        elif stepped_flag == 2: step_action(1, 39 - L3 * math.cos(math.asin(7 / 11.2)),   41.2, -math.asin(7 / 11.2),   ACT_OPEN, 28, 50, 0, 600, 101) # 低
+        elif stepped_flag == 3: step_action(1, 39 - L3 * math.cos(math.asin(5 / 11.2)),   49.5, -math.asin(5 / 11.2),   ACT_OPEN, 28, 50, 0, 600, 102) # 高
     # 抓球
-    elif platfrom_step == 100:  step_action(1, 39 - L3 * math.cos(math.asin(5.5 / 11.2)), 45, -math.asin(5.5 / 11.2), ACT_CLOSE, None, 50, 700, 200, 5) # 中
-    elif platfrom_step == 101:  step_action(1, 39 - L3 * math.cos(math.asin(7 / 11.2)),   42, -math.asin(7 / 11.2),   ACT_CLOSE, None, 50, 700, 200, 5) # 低
-    elif platfrom_step == 102:  step_action(1, 39 - L3 * math.cos(math.asin(5 / 11.2)),   50, -math.asin(5 / 11.2),   ACT_CLOSE, None, 50, 700, 200, 5) # 高
+    elif platfrom_step == 100:  step_action(1, 39 - L3 * math.cos(math.asin(5.5 / 11.2)), 46.2, -math.asin(5.5 / 11.2), ACT_CLOSE, None, 50, 700, 200, 5) # 中
+    elif platfrom_step == 101:  step_action(1, 39 - L3 * math.cos(math.asin(7 / 11.2)),   41.2, -math.asin(7 / 11.2),   ACT_CLOSE, None, 50, 700, 200, 5) # 低
+    elif platfrom_step == 102:  step_action(1, 39 - L3 * math.cos(math.asin(5 / 11.2)),   49.5, -math.asin(5 / 11.2),   ACT_CLOSE, None, 50, 700, 200, 5) # 高
     # 扫码 放入框中
     elif platfrom_step == 5: step_action(1, 5, 60, POS_HOR, ACT_CLOSE, None, 50, 200, 500, 6)
     elif platfrom_step == 6: step_action(1, 23.5, 34.2, POS_VER, ACT_CLOSE, None, 50, 500, 500, 7)
@@ -485,10 +485,10 @@ def stepped_platfrom():
     # 放干扰球
     elif platfrom_step == 17:
         if stepped_flag == 1:   step_action(0.5, 39 - L3 * math.cos(math.asin(5.5 / 11.2)), 46, -math.asin(5.5 / 11.2), ACT_CLOSE, None, 50, 600, 800, 110)   # 中放置点
-        elif stepped_flag == 2: step_action(0.5, 39 - L3 * math.cos(math.asin(7 / 11.2)), 43, -math.asin(7 / 11.2),   ACT_CLOSE, None, 50, 600, 800, 111) # 低放置点
+        elif stepped_flag == 2: step_action(0.5, 39 - L3 * math.cos(math.asin(7 / 11.2)), 41.5, -math.asin(7 / 11.2),   ACT_CLOSE, None, 50, 600, 800, 111) # 低放置点
         elif stepped_flag == 3: step_action(0.5, 39 - L3 * math.cos(math.asin(5 / 11.2)), 50, -math.asin(5 / 11.2),   ACT_CLOSE, None, 50, 600, 800, 112) # 高放置点
     elif platfrom_step == 110:  step_action(0.5, 39 - L3 * math.cos(math.asin(5.5 / 11.2)), 46, -math.asin(5.5 / 11.2), ACT_OPEN, 25, 50, 800, 150, 18) # 中
-    elif platfrom_step == 111:  step_action(0.5, 39 - L3 * math.cos(math.asin(7 / 11.2)), 43, -math.asin(7 / 11.2),   ACT_OPEN, 25, 50, 800, 150, 18) # 低
+    elif platfrom_step == 111:  step_action(0.5, 39 - L3 * math.cos(math.asin(7 / 11.2)), 41.5, -math.asin(7 / 11.2),   ACT_OPEN, 25, 50, 800, 150, 18) # 低
     elif platfrom_step == 112:  step_action(0.5, 39 - L3 * math.cos(math.asin(5 / 11.2)), 50, -math.asin(5 / 11.2),   ACT_OPEN, 25, 50, 800, 150, 18) # 高
     elif platfrom_step == 18:   step_action(1, 25, 60, POS_HOR, ACT_OPEN, 25, 50, 400, 600, 22)
     elif platfrom_step == 22:   step_action(1, 5, 60, POS_HOR, ACT_OPEN, 25, 50, 600, 600, 19)
@@ -510,7 +510,7 @@ def post_get_ball():
             if color_data is not None:
                 post_x_0 = (160 - color_data[1]) * post_k # 镜头 x 方向上的偏移 坐标系 y 方向
                 post_y_0 = (120 - color_data[2]) * post_k # 镜头 y 方向上的偏移 坐标系 x 方向
-                post_x_1 = 31.6 + post_y_0              # 坐标系 x 方向上的距离 28.6 29 30
+                post_x_1 = 32 + post_y_0              # 坐标系 x 方向上的距离 28.6 29 30
                 post_y_1 = -post_x_0                    # 坐标系 y 方向上的距离
                 angle = math.atan(post_y_1 / post_x_1)  # 计算爪子与 坐标系x轴 的夹角的模
                 if angle < 0: angle = -angle
@@ -558,9 +558,9 @@ def post_get_ball():
         group_index += 1
         if group_index < 10: post_step = 0  # 下一组
         else:
-            send_cmd_location_buff(0x0F, 160)
+            # send_cmd_location_buff(0x0F, 160)
             print("立桩任务完成")
-            step_action(1, 21, 38, POS_VER, ACT_OPEN, 20, 30, 500, 500, 15)
+            step_action(4,21,35.5, POS_VER,  ACT_CLOSE, None, 30, 500, 500, 15)
     elif post_step == 15: send_cmd_location_buff(0x0F, 160)
 
 # ------------- 立体仓库 --------------
@@ -601,7 +601,7 @@ def warehouse_task():
             else: img_fps = 0
         if delay_ms(packet_time_ms, 1000):                      
             if column_cnt == 0: warehouse_step = 20                                 #第一列 第一层没有球
-            elif column_cnt == 1: warehouse_step = 101                                #第二列 第一层没有球
+            elif column_cnt == 1: step_action(0,18,40, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 0, 400, 101)                                #第二列 第一层没有球
             elif column_cnt == 2:                                                     #第三列 第一层没有球
                 if 2 not in ball_data: warehouse_step = 20
                 elif 3 not in ball_data: warehouse_step = 30
@@ -623,11 +623,11 @@ def warehouse_task():
                     curr_x = color_data[1]
                     step_action(1+(160-curr_x)*0.02, 20, 45, -math.asin(2/11.2), ACT_OPEN, 40, 10, 300, 300, 2)    #################
             else: img_fps = 0
-        if delay_ms(packet_time_ms, 3000):                                               #没球
+        if delay_ms(packet_time_ms, 1000):                                               #没球
             if column_cnt == 0: warehouse_step = 30                                 #第一列 第二层没有球
             elif column_cnt == 1:
                 if 1 not in ball_data: warehouse_step = 0                       #第二列 第一层没有球
-                else: warehouse_step = 101
+                else: step_action(0,18,40, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 0, 400, 101)
             elif column_cnt == 2:
                 if 3 not in ball_data: warehouse_step = 30                      #第三列 第三层没有球
                 else:    # 最后一格没找完
@@ -649,11 +649,11 @@ def warehouse_task():
                     step_action(1+(160-curr_x)*0.02, 20, 32, -math.asin(2/11.2), ACT_OPEN, 40, 50, 300, 300, 2)    #################
             else: img_fps = 0
         if delay_ms(packet_time_ms, 1000):                                               #没球
-            if column_cnt == 0: warehouse_step = 100                                #第一列 第三层没有球
+            if column_cnt == 0: step_action(0,18,40, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 0, 400, 100)                                #第一列 第三层没有球
             elif column_cnt == 1:
                 if 2 not in ball_data: warehouse_step = 20                     #第二列 第二层没有球
                 elif 1 not in ball_data: warehouse_step = 0                    #第二列 第一层没有球
-                else: warehouse_step = 101                                          #第二列 扫完，一个球没有，剩第三个球
+                else: step_action(0,18,40, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 0, 400, 101)                                           #第二列 扫完，一个球没有，剩第三个球
             elif column_cnt == 2:   # 最后一格没找完
                 warehouse_step = 200
             packet_time_ms = pyb.millis()
@@ -693,47 +693,51 @@ def warehouse_task():
         if column_cnt == 0:                                                              # ============ 第一列 ============#
             if 2 not in ball_data: warehouse_step = 20
             elif 3 not in ball_data: warehouse_step = 30
-            if 3 in ball_data and len(ball_data) < 3: warehouse_step = 100       #第三行发现球，但没找到3个
+            if 3 in ball_data and len(ball_data) < 3: step_action(0,18,40, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 0, 300, 100)       #第三行发现球，但没找到3个
         if column_cnt == 1:                                                                  #第三行抓到球
             if 2 not in ball_data: warehouse_step = 20
             elif 1 not in ball_data: warehouse_step = 0
-            else: warehouse_step = 101                                                    #到了最上层
+            else: step_action(0,18,40, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 0, 300, 101)                                                    #到了最上层
         if column_cnt == 2:                                                                #第一行抓到球
             if 2 not in ball_data: warehouse_step = 20
             elif 3 not in ball_data: warehouse_step = 30
         packet_time_ms = pyb.millis()
     # ============ 右边第一例找完了没找全才会进这里 ============
     elif warehouse_step == 100:                                                           #从这里开始第二列格子
-        # if len(qr_rx_buff) in [1, 2]:                                                     #第一列结束
-        send_cmd_location_buff(0xA2, 160)                                             #第二列格子开始发送0xA2
-        #print("收到：",data_rx_stm32)
-        if data_rx_stm32 == 0x08: #这里已经到了中间，并且第一个二维码扫到了才会到这一步                                                    #小车走到中间
-            print("第二列格子")
-            column_cnt = 1 + column_cnt # 0 + 1 = 1  开始找中间一列                                         #到第二列格子时已经确定了扫到1个二维码
-            if 3 not in ball_data: warehouse_step = 30
-            elif 2 not in ball_data: warehouse_step = 20
-            elif 1 not in ball_data: warehouse_step = 0
-            # warehouse_step = 30                                                       #这里已经在观察位了 需要底盘走到这里在发08
-        packet_time_ms = pyb.millis()
+        step_action(4,21,35.5, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 300, 400, 100)                                                    #第一列结束
+        if delay_ms(packet_time_ms,1500)==1:
+            send_cmd_location_buff(0xA2, 160)                                             #第二列格子开始发送0xA2
+            #print("收到：",data_rx_stm32)
+            if data_rx_stm32 == 0x08: #这里已经到了中间，并且第一个二维码扫到了才会到这一步                                                    #小车走到中间
+                print("第二列格子")
+                column_cnt = 1 + column_cnt # 0 + 1 = 1  开始找中间一列                                         #到第二列格子时已经确定了扫到1个二维码
+                if 3 not in ball_data: warehouse_step = 30
+                elif 2 not in ball_data: warehouse_step = 20
+                elif 1 not in ball_data: warehouse_step = 0
+                # warehouse_step = 30                                                       #这里已经在观察位了 需要底盘走到这里在发08
+            # packet_time_ms = pyb.millis()
     # ============ 中间第一例找完了没找全才会进这里 ============
     elif warehouse_step == 101:                                                           #从这里开始第三列格子
-        # if len(qr_rx_buff) in [2, 3]:                                                     #第二列结束
-        send_cmd_location_buff(0xA3, 160)                                             #第三列格子开始发送0xA3
-        #print("收到：",data_rx_stm32)
-        if data_rx_stm32 == 0x0A: #这里已经到了 左边                                   #小车走到左边
-            print("第三列格子")
-            column_cnt = 1 + column_cnt           # 1 + 1 = 2 开始找左边一列
-            if 1 not in ball_data: warehouse_step = 0                            #
-            elif 2 not in ball_data: warehouse_step = 20
-            elif 3 not in ball_data: warehouse_step = 30
-        packet_time_ms = pyb.millis()
+        step_action(4,21,35.5, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 400, 400, 101)                                                    #第二列结束
+        if delay_ms(packet_time_ms,1500)==1:
+            send_cmd_location_buff(0xA3, 160)                                             #第三列格子开始发送0xA3
+            #print("收到：",data_rx_stm32)
+            if data_rx_stm32 == 0x0A: #这里已经到了 左边                                   #小车走到左边
+                print("第三列格子")
+                column_cnt = 1 + column_cnt           # 1 + 1 = 2 开始找左边一列
+                if 1 not in ball_data: warehouse_step = 0                            #
+                elif 2 not in ball_data: warehouse_step = 20
+                elif 3 not in ball_data: warehouse_step = 30
+            # packet_time_ms = pyb.millis()
 
     # ============ 准备放球 ============
-    elif warehouse_step == 200: step_action(0, 5, 50, POS_HOR, ACT_CLOSE, None, 40, 600, 400, 201) #到这里找到三个球了 举球
+    elif warehouse_step == 200: 
+        packet_time_ms = pyb.millis()
+        step_action(0, 5, 50, POS_HOR, ACT_CLOSE, None, 40, 600, 400, 201) #到这里找到三个球了 举球
     elif warehouse_step == 201:  #收到0B入库
         if data_rx_stm32 == 0x08: column_cnt = 1   # 到达中间
         elif data_rx_stm32 == 0x0A: column_cnt = 2 # 到达左边
-        if delay_ms(packet_time_ms,1000):  # 等待小车走到放球位置
+        if delay_ms(packet_time_ms,1500):  # 等待小车走到放球位置
             if column_cnt== 0:      send_cmd_location_buff(0xA2,160)                          #右边结束发送0xA2
             elif column_cnt== 1:    send_cmd_location_buff(0xA3,160)                          #中间结束发送0xA3
             else:                   send_cmd_location_buff(0xA1,160)                          #左边结束发送0xA1
@@ -743,6 +747,7 @@ def warehouse_task():
             for i in range(3 - len(ball_data)): ball_data.append(0)  # 没找到的球补0
             step_action(0, 5, 45, POS_HOR, ACT_CLOSE, None, 40, 500, 400, 90)
             time.sleep_ms(410)
+        else: step_action(4,21,35.5, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 400, 400, 201)
     # ============ 码垛放球 ============
     elif warehouse_step == 90:                                                             #起始动作
         if ball_data[2] == 1:   step_action(0, 5,  55, POS_HOR,     ACT_CLOSE, None, 40, 400, 500, 202) #上面
@@ -799,6 +804,7 @@ def warehouse_task():
         elif ball_data[1] == 2: step_action(0, 5,  42,  POS_HOR, ACT_CLOSE, None, 40, 500, 500, 84) #中间
         elif ball_data[1] == 3: step_action(0, 11, 34,  -math.asin(2/11.2), ACT_CLOSE, None, 40, 500, 500, 84) #下面
         else :warehouse_step = 223
+        packet_time_ms = pyb.millis()
     elif warehouse_step == 84:                                                              #入点
         if ball_data[1] == 1:   step_action(0, 25, 53.5, -math.asin(1/11.2), ACT_CLOSE, None, 40, 500, 600, 218) #上面
         elif ball_data[1] == 2: step_action(0, 27, 42,    -math.asin(1/11.2), ACT_CLOSE, None, 40, 500, 600, 218) #中间
@@ -811,20 +817,22 @@ def warehouse_task():
         if ball_data[1] == 1:   step_action(0, 5,  55,   POS_HOR, ACT_OPEN,  30,   40, 100, 500, 223) #上面
         elif ball_data[1] == 2: step_action(0, 5,  41,   -math.asin(2/11.2), ACT_OPEN,  30,   20, 100, 500, 223) #中间
         elif ball_data[1] == 3: step_action(0, 5,  31,   -math.asin(4/11.2), ACT_OPEN,  30,   20, 100, 500, 223) #下面
-
+        packet_time_ms = pyb.millis()
     elif warehouse_step == 223:                                                             #出来 这个阶段完成，发送0xA4
-        step_action(0, 20, 39, POS_VER, ACT_OPEN, 30, 40, 500, 300, 223)
-        send_cmd_location_buff(0xA4,160)
-
+        step_action(0, 11, 45, -math.asin(4/11.2), ACT_CLOSE, None, 40, 500, 400, 230)
+    elif warehouse_step == 230: 
+        step_action(4, 21, 35.5, -math.asin(11 / 11.2), ACT_CLOSE, None, 40, 400, 400, 230)
+        if delay_ms(packet_time_ms,1500)== 1:
+            send_cmd_location_buff(0xA4,160)
 
 # ============ 入库 ============#
 def inbound_storage():
     global RFID_Buff, rfid_to_location, hoop_coordinates, inbound_index, idx, keys, inbound_step
     # print(inbound_index, idx, inbound_step) #仓库位置索引 对应篮筐位置 入库步骤
-    # img_txt.clear()
-    # img_txt.draw_string(10, 10, "step:", color=(255,255,255), scale=1.5)  # 2倍大小
-    # img_txt.draw_string(80, 10, str(inbound_step), color=(255,255,255), scale=1.5)  # 2倍大小
-    # lcd.display(img_txt)
+    img_txt.clear()
+    img_txt.draw_string(10, 10, "step:", color=(255,255,255), scale=1.5)  # 2倍大小
+    img_txt.draw_string(80, 10, str(inbound_step), color=(255,255,255), scale=1.6)  # 2倍大小
+    lcd.display(img_txt)
     if inbound_step == 0:                                                                 #开始过渡动作+
         # 获取 keys 中每一个值在 RFID_Buff 中的索引 也对应了篮筐中的索引
         if keys[inbound_index] in RFID_Buff and RFID_Buff.index(keys[inbound_index]) is not None:
@@ -1031,7 +1039,7 @@ def search_white():
             # print("area:",area)
             if area>= 6000 : #and is_send_data == 1
                 send_cmd_location_buff(0x0B,160)
-                time.sleep_ms(2)
+                send_cmd_location_buff(0x0B,160)
                 send_cmd_location_buff(0x0B,160)
                 step_action(1, 20, 38, POS_VER, ACT_OPEN, 25, 40, 0, 300, 1)
             else :
@@ -1054,8 +1062,8 @@ img_txt = image.Image(160, 80, image.RGB565)      # 可以指定尺寸
 while True:
     clock.tick()
     # img_txt.clear()
-    # img_txt.draw_string(10, 30, "qr:", color=(255,255,255), scale=1.5)
-    # img_txt.draw_string(80, 30, str(len(qr_rx_buff)), color=(255,255,255), scale=1.5)  # 2倍大小
+    # img_txt.draw_string(10, 30, "CMD:", color=(255,255,255), scale=1.5)
+    # img_txt.draw_string(80, 30, str(ldata_rx_stm32), color=(255,255,255), scale=1.5)  # 2倍大小
     # lcd.display(img_txt)
     # search_ball()
     # search_white()
@@ -1064,7 +1072,7 @@ while True:
         enter = 1
         send_cmd_location_buff(0x51,160)
         if arm_step == 0:   step_action(0,23,36, POS_VER, ACT_CLOSE, None, 50, -10, 600, 1)
-        elif arm_step == 1: step_action(0,12,45, POS_VER, ACT_OPEN, 35, 50, 600, 600, 3) #
+        elif arm_step == 1: step_action(0,16,38, -math.asin(11 / 11.2), ACT_CLOSE, None, 50, 600, 600, 3) #
         elif arm_step == 2: step_action(0, 14, 57, POS_HOR, ACT_OPEN, 35, 65, 600, 600, 3)
         elif arm_step == 3:
             arm_step = 0
